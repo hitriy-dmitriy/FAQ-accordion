@@ -1,0 +1,157 @@
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    font-family: Work Sans;
+}
+
+/* colors */
+:root {
+    --white: hsl(0, 0%, 100%);
+    --light-pink: hsl(275, 100%, 97%);
+    --grayish-purple: hsl(292, 16%, 49%);
+    --dark-purple: hsl(292, 42%, 14%);
+}
+
+/* font */
+@font-face {
+    font-family: Work Sans;
+    src: url(./assets/fonts/WorkSans-VariableFont_wght.ttf);
+}
+
+/* general styles */
+body {
+    background-color: var(--light-pink);
+    background-image: url(./assets/images/background-pattern-mobile.svg);
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: top;
+
+}
+h1, h4 {
+    color: var(--dark-purple);
+    font-weight: 700;
+}
+p {
+    color: var(--dark-purple);
+    opacity: .6;
+    font-size: .9rem;
+    line-height: 1.2rem;
+}
+hr {
+    opacity: .3;
+}
+
+/* Mobile design 375px */
+/* MAIN */
+.container {
+/*     width: 20rem; */
+    width: 80%;
+    height: auto;
+    margin: 7rem auto;
+    padding: 1.5rem 1.5rem .3rem 1.5rem; 
+    background-color: var(--white);
+    border-radius: .8rem;
+}
+
+/* animation*/
+.animate {
+    transform: rotate(360deg);
+    transition: transform .3s;
+}
+
+/* dynamic margin for hidden element */
+.dynamic-margin {
+    margin: 1.2rem auto;
+}
+
+/* HEADER */
+.header-items {
+    display: flex;
+    margin-bottom: 1.5rem;
+
+    & img {
+        width: 1.7rem;
+        height: auto;
+        margin-right: 1.5rem;
+    }
+}
+
+/* SECTION 1 */
+.section {
+    margin: 1rem auto;
+}
+
+.section-items {
+    display: grid;
+    grid-template-columns: 8fr 1fr;
+    align-items: center;
+
+    & h4 {
+        margin-right: 1rem;
+    }
+}
+
+.section-hidden-item  {
+    grid-column: span 2;
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height .3s ease-out;
+}
+
+.section-hidden-item.active {
+    max-height: 300px;
+}
+
+.footer-item {
+    font-family: outfit;
+    font-size: .5rem;
+    text-align: center;
+    color: hsl(228, 45%, 44%);
+    margin-top: 3rem;
+    margin-bottom: 1rem;
+}
+
+/* desktop design 1440px */
+@media (min-width: 600px) {
+    body {
+        background-image: url(./assets/images/background-pattern-desktop.svg);
+        background-attachment: fixed;
+    }
+
+    h4 {
+        font-size: 1.2rem;
+    }
+    p {
+        font-size: 1rem;
+    }
+    hr {
+        margin: 2rem auto;
+    }
+
+    .container {
+        margin-top: 11.5rem;
+        width: 600px;
+        height: auto;
+    }
+
+    .header-items {
+        & img {
+            width: 2.2rem;
+            height: auto;
+        }
+        & h1 {
+            font-size: 3.5rem;
+        }
+    }
+
+   .section-items {
+        & .img {
+            grid-column: end;
+        }
+        & h4:hover {
+            cursor: pointer;
+            color: violet;
+        }
+   } 
+}
