@@ -1,5 +1,6 @@
 # Frontend Mentor - FAQ accordion
-I added some interaction with and animation, feel free to check it out!
+I added some interaction with this FAQ and animation, feel free to check it out!
+
 ![Design preview for the FAQ accordion coding challenge](./design/desktop-preview.jpg)
 
 ## Welcome! 👋
