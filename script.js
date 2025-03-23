@@ -45,29 +45,41 @@ function rotateImage(image) {
 const images = document.getElementsByClassName("img");
 const hiddenText = document.getElementsByClassName("section-hidden-item");
 
+
+/* event delegation */
+document.onclick = function (event) {
+    if (event.target.dataset.index) {
+        const index = Number(event.target.dataset.index);
+        changeImage(images[index], hiddenText[index]);
+        rotateImage(images[index]);
+    }
+};
+
+
+
 /* Section 1 */
-images[0].addEventListener("click", () => {
+/* images[0].addEventListener("click", () => {
     changeImage(images[0], hiddenText[0]);
     rotateImage(images[0]);
-});
+}); */
 /* section 2 */
-images[1].addEventListener("click", () => {
+/* images[1].addEventListener("click", () => {
     changeImage(images[1], hiddenText[1]);
     rotateImage(images[1]);
-});
+}); */
 /* section 3 */
-images[2].addEventListener("click", () => {
+/* images[2].addEventListener("click", () => {
     changeImage(images[2], hiddenText[2]);
     rotateImage(images[2]);
-});
+}); */
 /* section 4 */
-images[3].addEventListener("click", () => {
+/* images[3].addEventListener("click", () => {
     changeImage(images[3], hiddenText[3]);
     rotateImage(images[3]);
-});
+}); */
 
 /* same logis as above but for h4 elements */
-const h4tags = document.querySelectorAll("h4");
+/* const h4tags = document.querySelectorAll("h4");
 h4tags[0].addEventListener("click", () => {
     changeImage(images[0], hiddenText[0]);
     rotateImage(images[0]);
@@ -83,4 +95,4 @@ h4tags[2].addEventListener("click", () => {
 h4tags[3].addEventListener("click", () => {
     changeImage(images[3], hiddenText[3]);
     rotateImage(images[3]);
-});
+}); */
